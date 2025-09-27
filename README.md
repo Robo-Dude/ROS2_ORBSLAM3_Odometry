@@ -44,6 +44,19 @@ It links directly against the compiled **`libORB_SLAM3.so`** library and exposes
 
 ---
 
+### ⚠️ Prerequisite: ORB-SLAM3 Core
+
+Before using this ROS 2 wrapper, you must first set up and build our customized ORB-SLAM3 (v1.2.24) from this repository:
+
+🔗 [ORB-SLAM3_Ubuntu24.04](https://github.com/Robo-Dude/ORB-SLAM3_Ubuntu24.04.git)
+
+1. Clone and build the ORB-SLAM3 core package.
+
+2. Make sure the generated .so library is available.
+
+3. Only after that, proceed with the [ROS2_ORB-SLAM3_Odometry](https://github.com/Robo-Dude/ROS2_ORB-SLAM3_Odometry.git)
+   setup.
+
 ## ⚠️ OpenCV Version Setup
 
 - **OpenCV 4.12 (custom / CUDA-enabled)**  
