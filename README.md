@@ -46,7 +46,7 @@ It links directly against the compiled **`libORB_SLAM3.so`** library and exposes
 
 ### ⚠️ Prerequisite: ORB-SLAM3 Core
 
-Before using this ROS 2 wrapper, you must first set up and build our customized ORB-SLAM3 (v1.2.24) from this repository:
+Before using this ROS 2 wrapper, you must first set up and build our customized ORB-SLAM3 from this repository:
 
 🔗 [ORB-SLAM3_Ubuntu24.04](https://github.com/Robo-Dude/ORB-SLAM3_Ubuntu24.04.git)
 
