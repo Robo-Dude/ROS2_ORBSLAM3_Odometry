@@ -166,6 +166,9 @@ Publishes:
   
  > TF: odom → base_link
 
+![mono_orbslam3 - Made with Clipchamp](https://github.com/user-attachments/assets/2e965de4-3e6d-4f31-bdcd-0e30e8c6c3fd)
+
+
 ### 2️⃣ Stereo Camera (RealSense D435)
 
 Uses stereo infra cameras from D435.
