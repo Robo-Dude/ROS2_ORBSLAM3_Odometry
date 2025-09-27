@@ -226,6 +226,11 @@ Publishes:
  > TF: odom → base_link
 ---
 
+To visualize the odometry and tf data run Rviz and add the topic /odom and /tf
+```
+rviz2 -f odom
+```
+
 ## ✅ Notes
 
 Each launch file automatically loads:
