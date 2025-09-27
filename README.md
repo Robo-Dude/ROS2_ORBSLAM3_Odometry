@@ -132,3 +132,96 @@ colcon build --packages-select orbslam3_ros2 --symlink-install
 # Source the setup file
 source install/setup.bash
 ```
+
+### ▶️ 5. Run the Node
+# Running the Nodes - ROS2 ORB-SLAM3 Odometry
+
+This guide explains how to run the ROS2 ORB-SLAM3 odometry nodes for different camera types and modes.  
+All nodes publish odometry (`/odom`) and broadcast TF (`odom → base_link`).
+
+---
+
+## Supported Modes
+
+| Mode              | Input Source                  | ROS Topic / TF Published |
+|------------------|--------------------------------|-------------------------|
+| Mono              | Webcam / ROS2 camera           | `/odom`, `odom → base_link` |
+| Stereo            | RealSense D435 / D455         | `/odom`, `odom → base_link` |
+| Stereo-Inertial   | Stereo + IMU / ROS2 bag        | `/odom`, `odom → base_link` |
+| RGB-D             | RealSense RGB-D / Gazebo       | `/odom`, `odom → base_link` |
+
+---
+
+### 1️⃣ Mono Camera (Webcam)
+
+Uses your laptop webcam.
+
+Launch command:
+```bash
+ros2 launch package_launch orb_realsense_mono_launch.py 
+```
+Publishes:
+
+ > /odom (pose)
+  
+ > TF: odom → base_link
+
+### 2️⃣ Stereo Camera (RealSense D435)
+
+Uses stereo infra cameras from D435.
+
+Launch command:
+```bash
+ros2 launch package_launch orb_realsense_stereo_launch.py 
+```
+
+Publishes:
+
+ > /odom (pose)
+  
+ > TF: odom → base_link
+
+### 3️⃣ RGB-D Camera (RealSense D435)
+
+Uses RGB-D stream from RealSense.
+
+Launch command:
+```bash
+ros2 launch package_launch orb_realsense_rgbd_launch.py 
+```
+Publishes:
+
+ > /odom (pose)
+  
+ > TF: odom → base_link
+
+4️⃣ Stereo-Inertial Mode (ROSBag with IMU)
+
+Uses pre-recorded ROSBag containing stereo images and IMU data.
+
+Launch command:
+```bash
+ros2 launch package_launch orb_realsense_stereo_inertial_launch.py 
+```
+ROSBAG Setup -
+
+```bash
+---
+```
+
+## ✅ Notes
+
+Each launch file automatically loads:
+
+ORB vocabulary file (ORBvoc.txt)
+
+Camera configuration file
+
+Only Stereo-Inertial mode uses ROSBag; all others use live camera input.
+
+TF frames respect the robot base (base_link) coordinate frame.
+
+No manual topic remapping needed; handled in launch files.
+
+
+
