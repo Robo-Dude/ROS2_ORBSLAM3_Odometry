@@ -202,7 +202,7 @@ Uses pre-recorded ROSBag containing stereo images and IMU data.
 ROSBAG Setup:
 
 ```bash
----
+ros2 bag play output.db3 --remap /cam0/image_raw:=/camera/left /cam1/image_raw:=/camera/right /imu0:=/imu
 ```
 
 Launch command:
