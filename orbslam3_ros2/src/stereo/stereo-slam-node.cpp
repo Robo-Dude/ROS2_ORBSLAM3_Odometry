@@ -257,7 +257,7 @@ void StereoSlamNode::GrabStereo(const ImageMsg::SharedPtr msgLeft, const ImageMs
         nav_msgs::msg::Odometry odom_msg;
         odom_msg.header.stamp = this->get_clock()->now();
         odom_msg.header.frame_id = "odom";
-        odom_msg.child_frame_id = "camera_link";
+        odom_msg.child_frame_id = "base_link";
 
         odom_msg.pose.pose.position.x = t_ros.x();
         odom_msg.pose.pose.position.y = t_ros.y();

@@ -15,6 +15,10 @@
 
 #include <cv_bridge/cv_bridge.h>
 
+#include <nav_msgs/msg/odometry.hpp>
+#include <geometry_msgs/msg/transform_stamped.hpp>
+#include <tf2_ros/transform_broadcaster.h>
+
 #include "System.h"
 #include "Frame.h"
 #include "Map.h"
@@ -34,8 +38,20 @@ private:
     typedef message_filters::sync_policies::ApproximateTime<sensor_msgs::msg::Image, sensor_msgs::msg::Image> approximate_sync_policy;
 
     void GrabRGBD(const sensor_msgs::msg::Image::SharedPtr msgRGB, const sensor_msgs::msg::Image::SharedPtr msgD);
+    
+    rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr odom_pub_;
+
+    // TF broadcaster
+    std::unique_ptr<tf2_ros::TransformBroadcaster> tf_broadcaster_;
 
     ORB_SLAM3::System* m_SLAM;
+
+    // Previous camera pose
+    Sophus::SE3f prev_pose_;
+    bool has_prev_pose_ = false;
+
+    // Accumulated odometry pose
+    Sophus::SE3f accumulated_pose_;
 
     cv_bridge::CvImageConstPtr cv_ptrRGB;
     cv_bridge::CvImageConstPtr cv_ptrD;
