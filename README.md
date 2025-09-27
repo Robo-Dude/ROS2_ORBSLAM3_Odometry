@@ -1,6 +1,6 @@
 # ROS 2 ORB-SLAM3 Odometry Wrapper
 
-This package provides a **ROS 2 interface for [ORB-SLAM3](https://github.com/UZ-SLAMLab/ORB_SLAM3)**.  
+This package provides a **ROS 2 interface for [ORB-SLAM3](https://github.com/Robo-Dude/ORB-SLAM3_Ubuntu24.04.git)**.  
 It links directly against the compiled **`libORB_SLAM3.so`** library and exposes SLAM-estimated **camera pose** as standard ROS 2 messages:
 
 - Publishes **`/odom`** (`nav_msgs/Odometry`)
