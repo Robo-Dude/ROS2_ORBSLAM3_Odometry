@@ -184,6 +184,9 @@ Publishes:
   
  > TF: odom → base_link
 
+![orbslam3_stereo - Made with Clipchamp](https://github.com/user-attachments/assets/e96c13db-eb2b-4c0b-934a-77fcec8d1209)
+
+
 ### 3️⃣ RGB-D Camera (RealSense D435)
 
 Uses RGB-D stream from RealSense.
@@ -227,6 +230,9 @@ Publishes:
  > /odom (pose)
   
  > TF: odom → base_link
+
+![Sterero_imu_orbslam3 - Made with Clipchamp](https://github.com/user-attachments/assets/30b693a5-c484-4d76-96dc-5d7be871645f)
+
 ---
 
 To visualize the odometry and tf data run Rviz and add the topic /odom and /tf
