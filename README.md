@@ -201,6 +201,16 @@ Uses pre-recorded ROSBag containing stereo images and IMU data.
 
 ROSBAG Setup:
 
+Download EuRoC Dataset (V1_02_medium.bag)
+
+```
+wget -P ~/Downloads http://robotics.ethz.ch/~asl-datasets/ijrr_euroc_mav_dataset/vicon_room1/V1_02_medium/V1_02_medium.bag
+cd ~Downloads
+rosbags-convert --src V1_02_medium.bag --dst output
+cd ~output
+```
+> Note - Check this link reference to convert rosbag to ros2bag . https://docs.ros.org/en/noetic/api/ov_core/html/dev-ros1-to-ros2.html
+ 
 ```bash
 ros2 bag play output.db3 --remap /cam0/image_raw:=/camera/left /cam1/image_raw:=/camera/right /imu0:=/imu
 ```
@@ -209,6 +219,12 @@ Launch command:
 ```bash
 ros2 launch package_launch orb_realsense_stereo_inertial_launch.py 
 ```
+Publishes:
+
+ > /odom (pose)
+  
+ > TF: odom → base_link
+---
 
 ## ✅ Notes
 
