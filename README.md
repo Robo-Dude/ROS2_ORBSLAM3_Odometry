@@ -199,14 +199,15 @@ Publishes:
 
 Uses pre-recorded ROSBag containing stereo images and IMU data.
 
-Launch command:
-```bash
-ros2 launch package_launch orb_realsense_stereo_inertial_launch.py 
-```
-ROSBAG Setup -
+ROSBAG Setup:
 
 ```bash
 ---
+```
+
+Launch command:
+```bash
+ros2 launch package_launch orb_realsense_stereo_inertial_launch.py 
 ```
 
 ## ✅ Notes
